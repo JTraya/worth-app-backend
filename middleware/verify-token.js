@@ -1,9 +1,8 @@
 const jwt = require('jsonwebtoken')
 
 function verifyToken(req, res, next){
-	console.log(req.headers, " req.headers")
+	// console.log(req.headers, " req.headers")
 	try {
-		console.log(req.headers.authorization, " <- req.headers.authorization")
 		const token = req.headers.authorization.split(' ')[1]
 
 		console.log(token, " <- token")
@@ -12,7 +11,7 @@ function verifyToken(req, res, next){
 		// assign the decoded token to req.user! and pass it to the controller function
 		// by calling next()
 
-		req.user = decoded;
+		req.user = decoded.user;
 		next()
 
 	} catch(err){

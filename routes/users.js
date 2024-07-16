@@ -5,7 +5,7 @@ const upload = multer()
 
 const userRouter = require('../controllers/users')
 
-router.post('/signup', upload.single('photo'), userRouter.signup)
+router.post('/signup', userRouter.signup)
 router.post('/login', userRouter.login)
 
 
